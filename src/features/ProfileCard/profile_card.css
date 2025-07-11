@@ -1,12 +1,35 @@
 .profile-card-style {
     background-color: #2B2B2B;
     width: 20rem;
-    height: 500px;
+    height: 490px;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: baseline;
     align-items: center;
     border-radius: 30px;
+    padding-top: 10px;
+    gap: 20px;
+}
+
+.profile-card-style:hover .image-style{
+    position: relative;
+    height: 480px;
+}
+
+.profile-card-style:hover .user-info-field-style{
+    position: absolute;
+    bottom: 22%;
+    padding: 20px;
+    max-width: 19rem;
+    background-color: #202A2F99;
+    backdrop-filter: blur(5px);
+    padding: 0;
     padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 30px;
+}
+
+.profile-card-style:hover .about-user-style{
+    color: white;
 }

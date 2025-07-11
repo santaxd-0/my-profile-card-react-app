@@ -1,9 +1,11 @@
 import { Image } from "../../components/Image/Image"
-import { ProfileHeader } from "../../components/ProfileHeader/ProfileHeader"
-import { UserInfo } from "../../components/UserInfo/UserInfo"
-import { UserSubscribes } from "../../components/UserSubscribes/UserSubscribes"
+import { UserInfoField } from "../UserInfoField/UserInfoField"
 
 import "./profile_card.css"
+import "../../components/UserInfo/user_info.css"
+import "../../components/UserSubscribes/user_subscribes.css"
+import "../../components/Image/image.css"
+import "../UserInfoField/userinfofield.css"
 
 import UserImage from "../../assets/user_photo.jpg"
 import UserIcon from "../../assets/react.svg"
@@ -16,7 +18,7 @@ const userInfo = {
   surname: "Zhuravel",
   info: "I am a beginner fullstack developer who is interesting in programming!",
   followers: 418,
-  subsrcribes: 12,
+  subscribes: 12,
 }
 
 
@@ -24,11 +26,7 @@ export function ProfileCard(){
     return (
         <div className="profile-card-style">
             <Image image={userInfo.user_image} />
-            <ProfileHeader name={userInfo.name} surname={userInfo.surname}
-             user_icon={userInfo.user_icon}/>
-            <UserInfo aboutUser={userInfo.info}/>
-            <UserSubscribes userFollowers={userInfo.followers}
-             userSubscribes={userInfo.subsrcribes}/>
+            <UserInfoField User={userInfo}/>
         </div>
     )
 }

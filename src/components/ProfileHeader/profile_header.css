@@ -1,11 +1,12 @@
-.user-header-style {
+.user-header-block-style {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-bottom: 5px;
 }
 
-.user-header-style h2 {
+.user-header-style {
     margin-bottom: 0px;
     margin-top: 0px;
     font-size: 22px;

@@ -2,4 +2,6 @@
     border-radius: 30px;
     height: 300px;
     width: 300px;
+    object-fit: cover;
+    transition: height 0.8s ease;
 }

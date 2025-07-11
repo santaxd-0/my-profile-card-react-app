@@ -1,10 +1,8 @@
 .about-user-style{
     color: #BBBBBB;
-    padding-left: 25px;
-    padding-right: 25px;
+    font-size: 15px;
 }
 
 .about-user-style p{
     margin-top: 0px;
-    margin-bottom: 10px;
 }
