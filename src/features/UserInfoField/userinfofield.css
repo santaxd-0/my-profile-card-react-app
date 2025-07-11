@@ -4,4 +4,6 @@
     align-items: center;
     justify-content: center;
     background-color: #2B2B2B;
+    padding: 0px;
+    transition: padding 0.8s ease;
 }
