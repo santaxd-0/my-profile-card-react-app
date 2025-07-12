@@ -1,9 +1,27 @@
+import { useState } from "react"
 import { Tooltip } from "../Tooltip/Tooltip"
 
 import "./user_subscribes.css"
 import "../Tooltip/tooltip.css"
 
-export function UserSubscribes({ userFollowers, userSubscribes }){
+export function UserSubscribes({ userFollowers, userSubscribes, isAnUserFollowed, setIsAnUserFollowed }){
+    const [buttonColor, setButtonColor] = useState(false);
+    const [buttonText, setButtonText] = useState(false);
+    const [buttonTextColor, setButtonTextColor] = useState(false);
+
+    const buttonClickHandler = () => {
+        setButtonColor(!buttonColor);
+        setButtonText(!buttonText);
+        setButtonTextColor(!buttonTextColor);
+        setIsAnUserFollowed(!isAnUserFollowed);
+    }
+
+    const buttonStyle = {
+        background: buttonColor ? "white" : "linear-gradient(to bottom, #4a4a4a, #2B2B2B)",
+        color: buttonTextColor ? "black" : "white",
+        buttonText: buttonText ? "Followed" : "Follow +",
+    };
+
     return (
         <div className="user-subscribes-block-style">
             <div className="text-style">
@@ -23,7 +41,10 @@ export function UserSubscribes({ userFollowers, userSubscribes }){
                 </span>
             </div>
             <div>
-                <button className="user-follow-button-style">Follow +</button>
+                <button className="user-follow-button-style"
+                 style={{background: buttonStyle.background, color: buttonStyle.color}} onClick={buttonClickHandler}>
+                    {buttonStyle.buttonText}
+                </button>
             </div>
         </div>
     )

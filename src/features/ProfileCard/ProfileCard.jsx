@@ -1,5 +1,7 @@
+import { useState } from "react"
 import { Image } from "../../components/Image/Image"
 import { UserInfoField } from "../UserInfoField/UserInfoField"
+import { PopupMessage } from "../../components/PopupMessage/PopupMessage"
 
 import "./profile_card.css"
 import "../../components/UserInfo/user_info.css"
@@ -23,10 +25,21 @@ const userInfo = {
 
 
 export function ProfileCard(){
+    const [userFollowed, setUserFollowed] = useState(false);
+
     return (
         <div className="profile-card-style">
             <Image image={userInfo.user_image} />
-            <UserInfoField User={userInfo}/>
+            <UserInfoField User={userInfo} isUserFollowed={userFollowed}
+             setIsUserFollowed={setUserFollowed}/>
+            <PopupMessage
+             key={userFollowed ? "followed" : "unfollowed"}
+             style={{
+               animationName: userFollowed ? "popup" : "none",
+               animationDuration: "3s",
+               animationFillMode: "forwards"
+             }}
+             text={userFollowed ? "Followed!" : "Unfollowed!"}/>
         </div>
     )
 }
